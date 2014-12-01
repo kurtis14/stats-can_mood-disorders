@@ -12,15 +12,15 @@ shinyServer(function(input, output) {
 	
 	output$selectRegion <- renderUI({
 		selectInput('Region', choices= levels(statscan$Region),
-								multiple = TRUE, label='Select Region')
+								multiple = TRUE, label='Select Region(s)')
 	})
 	output$selectGender <- renderUI({
 		selectInput('Gender',choices=levels(statscan$Gender),
-								multiple=TRUE, label='Select Gender')
+								multiple=TRUE, label='Select Gender(s)')
 	})
 	output$selectVariable <- renderUI({
 		selectInput('Variable',choices=levels(statscan$Variable),
-								multiple=TRUE, label='Select Variable')
+								multiple=TRUE, label='Select Variable(s)')
 	})
 	filtered.data <- reactive({
 		subset(statscan, Region %in% input$Region
